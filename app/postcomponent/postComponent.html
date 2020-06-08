@@ -1,0 +1,19 @@
+<div class="row container-fluid" ng-if="$ctrl.posts != undefined" style="height: 520px !important; overflow-y: scroll;">
+  <h1>Posts By ({{$ctrl.postBy.name}})</h1>
+  <table class="table table-bordered table-stripped">
+    <thead>
+      <tr>
+        <td>ID</td>
+        <td>Post</td>
+        <td>Action</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="post in $ctrl.posts">
+        <td>{{post.id}}</td>
+        <td><b>{{post.title}}</b> </br> {{post.body}}</td>
+        <td><button ng-click="$ctrl.diplayPosts(post)">View</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

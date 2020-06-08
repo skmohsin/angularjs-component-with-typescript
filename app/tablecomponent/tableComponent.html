@@ -1,0 +1,23 @@
+<div class="row container-fluid">
+  <h1>Table Component</h1>
+  <table class="table table-bordered table-stripped">
+    <thead>
+      <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Action</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="user in $ctrl.tabledata">
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td>
+          <button ng-click="$ctrl.passValueToParentComponent({userObj : user})">
+            View Details
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

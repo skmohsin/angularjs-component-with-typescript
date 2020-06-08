@@ -1,0 +1,49 @@
+<style>
+  .card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+  }
+
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  /* Add some padding inside the card container */
+  .container {
+    padding: 2px 16px;
+  }
+</style>
+
+<div class="container-fluid" ng-controller="ProductListCtrl as vm">
+  <h1>{{vm.title}}</h1>
+  <button ng-click="vm.showList()">Show List</button>
+  <button ng-click="vm.showTable()">Show Table</button> <br /> </br>
+  <div class="row">
+    <div class="col-md-6">
+        <div class="card" ng-show="vm.user">
+          <div class="container">
+            <h4><b>{{vm.user.name}} ({{vm.user.username}})</b></h4>
+            <p>Email: {{vm.user.email}}</p>
+            <p>Phone: {{vm.user.phone}}</p>
+            <p>Website: {{vm.user.website}}</p>
+            <p>Address: {{vm.user.address.street}}, {{vm.user.address.suite}} {{vm.user.address.city}} ({{vm.user.address.zipcode}})</p>
+            <button ng-click="vm.getPosts(vm.user)">View User Post</button>
+          </div>
+    </div>
+  </div>
+</div>
+  <div class="row">
+    <div class="col-md-6">
+      <list-component listdata="vm.users" ng-if="vm.isShowList"></list-component>
+      <table-component
+        tabledata="vm.users"
+        pass-value-to-parent-component="vm.valueGetByTableComponent(userObj)"
+        ng-if="vm.isShowTable"
+      ></table-component></div>
+      <div class="col-md-6">
+        <post-component posts="vm.posts" post-By="vm.postBy"  style="word-wrap: break-word !important;"></post-component>
+      </div>
+  </div>
+</div>

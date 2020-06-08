@@ -1,0 +1,15 @@
+# How to configure typescript with angularjs
+
+https://code.visualstudio.com/docs/editor/tasks
+
+step1. npm install typescript -g (if already install no need to install again)
+step2. make task.json file in root directory
+step3. make package.json file and add dependencies and run (npm install)
+step4. npm install --save @types/angular-resource (cd to project folder and install)
+step5. npm install --save @types/angular-route (cd to project folder and install)
+step6. ctrl+shift+p for configure task runner (https://code.visualstudio.com/docs/editor/tasks-v1) or create task.json file
+
+
+Note: if we want to install any type defination file then search for 'angularjs file name type npm' on google
+
+

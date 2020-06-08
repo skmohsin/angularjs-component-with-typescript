@@ -67,6 +67,8 @@ This code sample explaines how we can work with components in angularjs using ty
         };
     ```
 
+![list-component](/images/list.png)
+
 * Table Component   (app/tablecomponent)
      * This is Child component which is placed in Product Component, see below code.
 
@@ -86,6 +88,7 @@ This code sample explaines how we can work with components in angularjs using ty
               passValueToParentComponent: "&"
          };
         ```
+![table-component](/images/table.png)
 
 * Post Component    (app/postcomponent)
     * This is component which will show user wise posts
@@ -96,6 +99,11 @@ This code sample explaines how we can work with components in angularjs using ty
             postBy: "<",
         };
      ```
+
+
+    ## Below is the complete picture of running demo
+
+![all-component](/images/all.png)
 
      
 
